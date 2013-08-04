@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://teracy-official.github.io/teracy-official-blog/sitemap.xml 

@@ -1,38 +1,141 @@
-## What is Octopress?
+teracy-official-blog
+====================
 
-Octopress is [Jekyll](https://github.com/mojombo/jekyll) blogging at its finest.
-
-1. **Octopress sports a clean responsive theme** written in semantic HTML5, focused on readability and friendliness toward mobile devices.
-2. **Code blogging is easy and beautiful.** Embed code (with [Solarized](http://ethanschoonover.com/solarized) styling) in your posts from gists, jsFiddle or from your filesystem.
-3. **Third party integration is simple** with built-in support for Pinboard, Delicious, GitHub Repositories, Disqus Comments and Google Analytics.
-4. **It's easy to use.** A collection of rake tasks simplifies development and makes deploying a cinch.
-5. **Ships with great plug-ins** some original and others from the Jekyll community &mdash; tested and improved.
+Teracy's official blog at http://blog.teracy.com
 
 
-## Documentation
+How to start
+------------
 
-Check out [Octopress.org](http://octopress.org/docs) for guides and documentation.
+Follow the instruction here at
+http://blog.teracy.com/2013/08/03/how-to-start-blogging-easily-with-octopress-and-teracy-dev/
+
+Instead of cloning `octopress` repository, fork this repository into your github account and
+clone it into your personal workspace.
+
+1. Fork this repository into your github account
+
+2. Clone your forked repository into your `workspace/personal` directory:
+
+``` bash
+$ ws
+$ cd personal
+$ git clone <your_forked_repository_here>
+```
+
+How to run blog on teracy-dev vagrant box
+-----------------------------------------
+
+1. Setup dev VM like this: http://dev.teracy.org/docs/develop/getting_started.html
+
+2. Enable Ruby: http://dev.teracy.org/docs/develop/ruby_training.html
+
+3. Forward port 4000 for vagrant_config_override.json
+
+```
+  "vm_forwarded_ports":[
+    {
+      "guest": 4000,
+      "host": 4000
+    }
+    ...
+```
+
+4. Install dependency, clone this repository and preview
+
+After `$ vagrant ssh`:
+
+4.1. Install with `bundle`
+
+Installs this for the first time only
+
+```
+$ ws
+$ git clone <repo_url>
+$ cd personal/blog
+$ bundle install
+```
+
+4.2. Preview blog
+
+```
+$ ws
+$ cd personal/blog
+$ rake preview
+```
+
+You should see something like this:
+
+```
+Starting to watch source with Jekyll and Compass. Starting Rack on port 4000
+[2014-12-10 10:31:54] INFO  WEBrick 1.3.1
+[2014-12-10 10:31:54] INFO  ruby 1.9.3 (2012-04-20) [i686-linux]
+[2014-12-10 10:31:54] INFO  WEBrick::HTTPServer#start: pid=20200 port=4000
+Configuration from /home/vagrant/workspace/personal/spec-int/_config.yml
+Auto-regenerating enabled: source -> public
+[2013-11-04 10:31:56] regeneration: 186 files changed
+>>> Change detected at 10:31:58 to: screen.scss
+identical public/stylesheets/screen.css
+
+Dear developers making use of FSSM in your projects,
+FSSM is essentially dead at this point. Further development will
+be taking place in the new shared guard/listen project. Please
+let us know if you need help transitioning! ^_^b
+- Travis Tilley
+
+>>> Compass is polling for changes. Press Ctrl-C to Stop.
+```
+
+Now, open http://localhost:4000 to see the blog.
+
+Note that sometimes the content was cached, you need to stop the preview (Cmd/Ctrl + c) then
+`$ rake generate` and `$ rake preview` again.
 
 
-## Contributing
+Blog post structure guide
+-------------------------
 
-[![Build Status](https://travis-ci.org/imathis/octopress.png?branch=master)](https://travis-ci.org/imathis/octopress)
+```
+The hook part: some introduction text to get interest from others to click.
 
-We love to see people contributing to Octopress, whether it's a bug report, feature suggestion or a pull request. At the moment, we try to keep the core slick and lean, focusing on basic blogging needs, so some of your suggestions might not find their way into Octopress. For those ideas, we started a [list of 3rd party plug-ins](https://github.com/imathis/octopress/wiki/3rd-party-plugins), where you can link your own Octopress plug-in repositories. For the future, we're thinking about ways to easier add them them into our main releases.
+This hook part is usually used for sharing the blog post so make it short and interesting enough for
+readers to continue reading.
 
+Problem
+-------
 
-## License
-(The MIT License)
+Tell the story, mention the concern, problem.
 
-Copyright © 2009-2013 Brandon Mathis
+Requirements
+------------
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ‘Software’), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Any requirements to solve the problem.
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+- requirement 1
+- requirmement 2
 
-THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Solution
+--------
 
+How to solve the problem steps by steps
 
-#### If you want to be awesome.
-- Proudly display the 'Powered by Octopress' credit in the footer.
-- Add your site to the Wiki so we can watch the community grow.
+**1. Step 1**
+
+**2. Step 2**
+
+2.1. Step 2.1
+
+2.2. Step 2.2
+
+- list item 1
+
+- list item 2
+
+**3. Step 3**
+
+Summary
+-------
+
+Summary of the blog post.
+
+```

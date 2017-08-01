@@ -21,35 +21,36 @@ keywords: teracy-dev, vagrant, docker, chef, devops
 published: true
 ---
 
-We’re very happy to announce our so long awaiting the major release of teracy-dev, the v0.5.0-c1 release. Since the first beta release, we got many attentions, suggestions that urge us to push this project to support more development, deployment stack along with Docker and Kubernetes.
+We’re very happy to announce the release of teracy-dev v0.5.0-c1 that introduces lots of features and changes to support more development, deployment stack along with Docker and Kubernetes.
 
-Although it already late for v0.5.0 but now we added a new feature to help you extend the teracy-dev as much as you wish without change much on teracy-dev it self. That helps us to focus on code stability, reduce bug and increase performance.
 
-<!-- more -->
 
 ## v0.5.0-c1
 
-As you known, the RC-1 version means “all minor bugs are fixed, the software works stably, and the code will be released unless there is a last minute bug found after test campaigns.”. However, due to some requests from our client and community, we have to add some features to this release.
+As you known, the RC-1 version means “all minor bugs are fixed, the software works stably, and the code will be released unless there is a last minute bug found after test campaigns.”. However, to meet some requests from our client and community, we addes some features to this release.
+<!-- more -->
 
 ## Changes
 
-In this major release, we included got some bug fixed, document improvement and new features:
+This major release includes some fixed bugs, document improvement and new features:
 
-- Added support for project base config. From now you can add a list of vagrant config to your JSON file and we extend config from that.
-- Updated document for getting started with windows environment, nodejs debug.
-- Added many tools to help your development process.
-- Added ability to use extend and unique extend the array list of config file.
-- Introduce ACME101 which includes many samples, getting start development stack.
+- Support the project base configuration. From now, you can add a list of vagrant configuration to your JSON file and extend the configuration from that.
+- Update the document for the getting started with windows environment, nodejs debug.
+- Add many tools to help your development process.
+- Add the ability to extend and uniquely extend the array list of the configuration file.
+- Introduce ACME101 as the sample project which shows the best practices of using teracy-dev.
 
 There are more that you should explore yourselves when using ``teracy-dev`` for a while.
 
 ## What's next?
-Along with project base config we also introduce [ACME101](https://github.com/acme101) which have many development stacks to use with teracy-dev, hope it will useful for you and we're welcome any contribution, suggestion for ACME101. We're also adding more documents and guide to the project. 
+Along with the project base configuration we also introduce [ACME101](https://github.com/acme101) which has many development stacks to use with teracy-dev. Hopefully, it will be useful for you and we're welcome any contribution, suggestion for ACME101. We're also adding more documents and guide for the project. 
 
-We'll take all the feedback from v0.5.0 usage to continue making `teracy-dev` better and greater.
+We'll take all the feedbacks from v0.5.0 usage to continue making `teracy-dev` better and greater.
 
 Don't hesitate to use [teracy-dev v0.5.0-c1](https://github.com/teracyhq/dev) for your everyday
 projects from today by getting started with http://dev.teracy.org/docs/getting_started.html
 
 If you have any feedbacks or problems, you're welcome to create issues for the project at
 https://github.com/teracyhq/dev/issues
+
+Enjoy and happy hacking!
